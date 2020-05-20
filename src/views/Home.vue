@@ -64,5 +64,3 @@ export default {
   }
 };
 </script>
-
-<!-- https://youtu.be/-DyKeMa5tYY?t=2340 -->
