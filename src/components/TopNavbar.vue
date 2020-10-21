@@ -1,7 +1,7 @@
 
  <template>
   <div>
-    <b-navbar toggleable="lg" type="dark" variant="info">
+    <b-navbar toggleable="lg" type="dark" variant="primary">
       <b-navbar-brand href="#">
         <img src="https://picsum.photos/30/30/?image=701" class="d-inline-block align-top" alt="stuff">
         BootstrapVue

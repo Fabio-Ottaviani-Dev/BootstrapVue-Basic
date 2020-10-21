@@ -12,7 +12,7 @@
       style="max-width: 20rem;"
       class="mb-2">
       <b-card-text>{{ description }}</b-card-text>
-      <b-button href="#" variant="info">Go somewhere</b-button>
+      <b-button href="#" variant="success">Go somewhere</b-button>
       <template v-slot:footer></template>
     </b-card>
   </b-col>

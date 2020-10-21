@@ -1,4 +1,3 @@
-
 <template>
   <b-container>
     <b-row align-v="center">
@@ -29,17 +28,21 @@ const API_URL = "http://localhost:5000";
 
 // @ is an alias to /src
 import Card from "@/components/Card.vue";
+import {mapGetters} from "vuex";
 
 export default {
   name: "Home",
   components: { "card": Card },
+  computed: {
+    ...mapGetters(["items"])
+  },
   mounted(){
     this.query = `?_page=${this.currentPage}&_limit=${this.perPage}`;
     this.fetchData(`${this.url}${this.query}`);
   },
   data() {
     return {
-      items: [],
+      //items: [],
       currentPage: 1,
       rows: 1,
       perPage: 4,
@@ -49,9 +52,12 @@ export default {
   },
   methods: {
     async fetchData(url){
-      const res = await fetch(url);
-      const val = await res.json();
-      this.items = val;
+      await this.$store.dispatch("fetchItems");
+      console.log("TEST: --> ", this.$store.getters.getItems.items);
+      console.log(url);
+      //const res = await fetch(url);
+      //const val = await res.json();
+      //this.items = val;
       // TODO: Get it from json tot_rows value.
       this.rows = 10;
 
@@ -64,5 +70,3 @@ export default {
   }
 };
 </script>
-
-<!-- https://youtu.be/-DyKeMa5tYY?t=2340 -->
